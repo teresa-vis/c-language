@@ -399,8 +399,135 @@
 //	printf("%f\n", sum);
 //	return 0;
 //}
-int main()
-{	
-	printf("\a");
-	return 0;
-}
+//#include <math.h>
+//int main()
+//{	
+//	double a, b, c, s, area;
+//	a = 3.67;
+//	b = 5.43;
+//	c = 6.21;
+//	s = (a + b + c) / 2;
+//	area = sqrt(s * (s - a) * (s - b) * (s - c));
+//	printf("a=%f\tb=%f\tc=%f\t\n", a, b, c);
+//	printf("area=%f\n", area);
+//	return 0;
+//} 
+//int main()
+//{
+//	double a;
+//	a = 10000;
+//	printf("%f\n", a / 3.0);
+//	printf("%-25.15f%25.15f\n", a / 3,a/3);
+//	printf("%e", 123.456);
+//	printf("%15.2e", 123.456);
+//	printf("%15.2E", 123.456);
+//	return 0;
+//}
+//int main()
+//{	
+//	int a = 377;
+//		int b = -1;
+//	printf("%c", a);
+//	printf("%20o%%", b);
+//	return 0;
+//}
+//int main()
+//{	//字符类型也属于整数类型，因此将一个字符赋给字符变量和将字符的ASCII代码赋给字符变量作用是完全相同的
+//	//但是应该注意，整型数据的范围为0~127
+//	/*char a = 'B', b = 'O', c = 'Y';
+//	putchar(a);
+//	putchar(b);
+//	putchar(c);
+//	putchar('\n');
+//	putchar(c);*/
+//	int a = 66, b = 79, c = 89;
+//	putchar(a);
+//	putchar(b);
+//	putchar(c);
+//	putchar('\n');
+//	return 0;
+//}
+//int main()
+//{	
+//	/*char a, b, c;
+//	a = getchar();
+//	b = getchar();
+//	c = getchar();
+//	putchar(a);
+//	putchar(b);
+//	putchar(c);
+//	putchar('\n');*/
+//
+//	putchar(getchar());
+//	putchar(getchar());
+//	putchar(getchar());
+//	putchar('\n');
+//	return 0;
+//}
+//int main()
+//{	
+//	char a1, b2;
+//	a1 = getchar();
+//	b2 = a1 + 32;
+//	putchar(b2);
+//	putchar('\n');
+//	return 0;
+//}
+//int main()
+//{	
+//	int x = 0302, y = 302;
+//	printf("%o%o\n", x, y);
+//	return 0;
+//}
+//由小到大输出三个数。
+//int main()
+//{	
+//	int a, b, c, t;
+//	scanf("%d %d %d", &a, &b, &c);
+//	if (a > b)
+//	{
+//		t = a;
+//		a = b;
+//		b = t;
+//	}
+//	if (a > c)
+//	{
+//		t = a;
+//		a = c;
+//		c = t;
+//	}
+//	if (b > c)
+//	{
+//		t = b;
+//		b = c;
+//		c = t;
+//	}
+//	printf("%d %d %d", a, b, c);
+//	return 0;
+//}
+//由大到小输出三个数。
+//int main()
+//{	
+//	double a, b, c, t;
+//	scanf("%lf %lf %lf", &a, &b, &c);
+//	if (a < b)
+//	{
+//		t = a;
+//		a = b;
+//		b = t;
+//	}
+//	if (a < c)
+//	{
+//		t = a;
+//		a = c;
+//		c = t;
+//	}
+//	if (b < c)
+//	{
+//		t = b;
+//		b = c;
+//		c = t;
+//	}
+//	printf("%f %f %f", a, b, c);
+//	return 0;
+//}
