@@ -799,30 +799,136 @@
 //	return(max);
 //}
 //写一个函数，当主函数调用此函数后，能求出平均分，最高分，最低分。(程序有误)
-float Max = 0, Min = 0;
-int main()
-{	
-	float average(float array[], int n);
-	float ave, score[10];
-	int i;
-	printf("enter 10 scores:");
-	for (i = 0; i < 10; i++)
-		scanf("%f", &score[i]);
-	ave = average(score, 10);
-	printf("max=%6.2f\nmin=%6.2f\naverage=%6.2f\n", Max, Min, ave);
-	return 0;
-}
-float average(float array[], int n)
-{
-	int i;
-	float aver, sum = array[0];
-	Max = Min = array[0];
-	for (i = 1; i < n; i++)
-	{
-		if (array[i] > Max)Max = array[i];
-		else if (array[i] < Min)Min = array[i];
-		sum = sum + array[i];
-	}
-	aver = sum / n;
-	return aver;
-}
+//float Max = 0, Min = 0;
+//int main()
+//{	
+//	float average(float array[], int n);
+//	float ave, score[10];
+//	int i;
+//	printf("enter 10 scores:");
+//	for (i = 0; i < 10; i++)
+//		scanf("%f", &score[i]);
+//	ave = average(score, 10);
+//	printf("max=%6.2f\nmin=%6.2f\naverage=%6.2f\n", Max, Min, ave);
+//	return 0;
+//}
+//float average(float array[], int n)
+//{
+//	int i;
+//	float aver, sum = array[0];
+//	Max = Min = array[0];
+//	for (i = 1; i < n; i++)
+//	{
+//		if (array[i] > Max)Max = array[i];
+//		else if (array[i] < Min)Min = array[i];
+//		sum = sum + array[i];
+//	}
+//	aver = sum / n;
+//	return aver;
+//}
+//int a = 100; b = 29;
+//int main()
+//{	
+//	int max(int x, int y);
+//	int a = 8;
+//	//max(a,b);
+//	printf("%d", max(a, b));
+//	return 0;
+//}
+//int max(int x, int y)
+//{
+//	int c;
+//	c = x > y ? x : y;
+//	return(c);
+//}
+//自动变量（auto变量)，静态局部变量(static局部变量)
+//int main()
+//{
+//	int f(int a);
+//	int a = 2, i;
+//	for (i = 0; i < 3; i++)
+//		printf("%d\n", f(a));
+//	return 0;
+//}
+//int f(int a)
+//{
+//	auto int b = 1;
+//	//static int c = 3;
+//	//这里static变量存储类型，函数调用结束后值不消失而继续保留原值
+//	//即占用的存储单元不释放，在下一次调用该函数时，该变量以有值，就是上一次函数调用
+//	//结束的值。
+//	 int c = 3;
+//
+//	b = b + 1;
+//	c = c + 1;
+//	return(a + b + c);//这里return这三个参数作为一个值传到f函数里面，然后执行i++;
+//}
+//利用静态变量的特性求n!.
+//int main()//第一种写法用for循环体进行。
+//{	
+//	int f(int n);
+//	int i,a;
+//	for (i = 1; i <= 5; i++)
+//	{
+//		a = i;
+//		printf("%d!=%d\n", i, f(a));
+//	}
+//	return 0;
+//}
+//int f(int n)
+//{
+//	static int f = 1;
+//	f = f * n;
+//	return f;
+//}
+//第二种写法利用自动变量i本身的特性进行求解。
+//int main()
+//{
+//	int i;
+//	for (i = 1; i <= 5; i++)
+//		printf("%d!=%d\n", i, f(i));
+//	return 0;
+//}
+//int f(int n)
+//{
+//	static int f = 1;
+//	f = f * n;
+//	return f;
+//}
+//用extern声明外部变量，扩展外部变量在外部程序中的作用域。
+//int A, B, C;
+//int main()
+//{	
+//	int max();
+//	extern int A, B, C;
+//	printf("please enter three integer number:\n");    
+//	scanf("%d %d %d", &A, &B, &C);
+//	printf("%d", max());
+//	return 0;
+//}
+//
+//int A, B, C;
+//
+//int max()
+//{
+//	int m;
+//	m = A > B ? A : B;
+//	if (C > m)m = C;      
+//	return m;
+//}
+//给定b的值，输入a和m,求a*b和a的m次的值。
+//int A;
+//int main()
+//{
+//	int squr(int n);//编译系统只关心参数个数和参数类型，而不检查参数名(形参参数名和函数参数名一样)。
+//					//如pic.c和com.c做对比可得知。
+//	int b = 3, c, d, m;
+//	printf("enter in numbers:\n");
+//	scanf("%d%d", &A, &m);
+//	c = A * b;
+//	printf("%d*%d=%d\n",A,b,c);
+//	d = power(m);
+//	printf("%d**%d=%d\n", A, m, d);
+//	return 0;
+//}
+
