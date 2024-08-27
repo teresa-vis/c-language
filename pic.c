@@ -968,6 +968,7 @@
 //	printf("%o %o", m, n);
 //	return 0;
 //}
+// 通过引进指针变量来进行两个数的比较，并先后大小输出。
 //int main()
 //{	
 //	int* a, * b, m, n, * t;
@@ -998,5 +999,20 @@
 //		p2 = p;
 //	}
 //	printf("%d %d", *p1, *p2);
+//	return 0;
+//}
+//非指针变量方式，输出两数进行大小比较，并先后输出。
+//int main()
+//{
+//	int a, b, t;
+//	printf("please enter two integer number:");
+//	scanf("%d %d", &a, &b);
+//	if (a < b)
+//	{
+//		t = a;
+//		a = b;
+//		b = t;
+//	}
+//	printf("%d %d", a, b);
 //	return 0;
 //}
