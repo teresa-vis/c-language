@@ -931,4 +931,72 @@
 //	printf("%d**%d=%d\n", A, m, d);
 //	return 0;
 //}
-
+//void fun(int x)
+//{
+//	if (x / 3 > 0)
+//		fun(x / 3);
+//	printf("%d\n", x);
+//}
+//void main()
+//{	
+//	fun(6);
+//	printf("\n");
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 2, b = 3;
+//	//int* a_point, * b_point;//可以先定义再初始化；
+//	//a_point = &a;
+//	//b_point = &b;
+//	int* a_point = &a;//也可以定义和初始化同时进行；
+//	int* b_point = &b;
+//	printf("%d %d", *a_point, *b_point);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 1, b = 2;
+//	int* m = &a;
+//	int* n = &b;
+//	*m = 1000;
+//	*n = 2000;
+//	printf("%d %d", *m,*n);//*m或者*n的作用不只是输出a和b的整型的值。
+//					//还表示指针变量m和n所指向a和b的值。(利用这一特点可以在不改变a和b的值情况下
+//					// 通过指针变量的特性来改变其值.)
+//	printf("\n");
+//	printf("%o %o", m, n);
+//	return 0;
+//}
+//int main()
+//{	
+//	int* a, * b, m, n, * t;
+//	printf("please enter two integer numbers:\n");
+//	scanf("%d %d", &m, &n);
+//	a = &m;
+//	b = &n;
+//	if (m < n)
+//	{
+//		t = a;
+//		a = b;
+//		b = t;
+//	}
+//	printf("%d %d", *a, *b);
+//	return 0;
+//}
+//int main()
+//{
+//	int* p1, * p2, * p, a, b;
+//	printf("please enter two integer numbers:\n");
+//	scanf("%d %d", &a, &b);
+//	p1 = &a;
+//	p2 = &b;
+//	if (a < b)
+//	{
+//		p = p1;
+//		p1 = p2;
+//		p2 = p;
+//	}
+//	printf("%d %d", *p1, *p2);
+//	return 0;
+//}
