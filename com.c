@@ -327,3 +327,129 @@
 //	printf("数目为:%d", i);
 //	return 0;
 //}
+//将数组a中n个整数按相反的顺序存放。
+//int main()
+//{
+//	void inv(int x[], int n);
+//	int i,a[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	printf("the original array:\n");
+//	for (i = 0; i < 10; i++)
+//		printf("%d ", a[i]);
+//	printf("\n");
+//	inv(a, 10);
+//	printf("the array has been inverted:\n");
+//	for (i = 0; i < 10; i++)
+//		printf("%d ", a[i]);
+//	printf("\n");
+//	return 0;
+//}
+//void inv(int x[], int n)
+//{
+//	int temp, i, j, m = (n - 1) / 2;
+//	for (i = 0; i <= m; i++)
+//	{
+//		j = n - 1 - i;
+//		temp = x[i];
+//		x[i] = x[j];
+//		x[j] = temp;
+//	}
+//	return;
+//}
+//练习二（将形参改为指针变量）
+//int main()
+//{
+//	void inv(int* x, int n);
+//	int i, a[5] = { 1,2,3,4,5 };
+//	printf("初始值为:\n");
+//	for (i = 0; i < 5; i++)
+//		printf("%d ", a[i]);
+//	printf("\n");
+//	inv(a, 5);
+//	printf("最终值为:\n");
+//	for (i = 0; i < 5; i++)
+//		printf("%d ", a[i]);
+//	printf("\n");
+//	return 0;
+//}
+//void inv(int* x, int n)
+//{
+//	int temp, * p, * i, * j, m = (n - 1) / 2;
+//	i = x;
+//	j = x + n - 1;
+//	p = x + m;
+//	for (; i <= p; i++, j--)
+//	{
+//		temp = *i;
+//		*i = *j;
+//		*j = temp;
+//	}
+//	return;
+//}
+//用指针方法对10个整数按大小顺序输出。
+//int main()
+//{
+//	void sort(int* x, int n);
+//	int a[10], i, * p = a;
+//	printf("please enter ten integer numbers:\n");
+//	for (i = 0; i < 10; i++)
+//		scanf("%d", p++);//注意scanf里面"%d"的空格
+//	p = a;
+//	sort(p, 10);
+//	for (p = a, i = 0; i < 10; i++)
+//	{
+//		printf("%d ", *p);
+//		p++;
+//	}
+//	printf("\n");
+//	return 0;
+//}
+//void sort(int* x, int n)
+//{
+//	int i, j, k, t;
+//	for (i = 0; i < n - 1; i++)
+//	{
+//		k = i;
+//		for (j = i + 1; j < n; j++)
+//			if (*(x + j) > *(x + k))k = j;
+//		if (k != i)
+//		{
+//			t = *(x + i);
+//			*(x + i) = *(x + k);
+//			*(x + k) = t;
+//		}
+//	}
+//}
+//int main()
+//{
+//	void sort(int x[], int n);
+//	int i, * p, a[10];
+//	p = a;
+//	printf("please enter 10 integer numbers:\n");
+//	for (i = 0; i < 10; i++)
+//		scanf("%d", p++);
+//	p = a;
+//	sort(p, 10);
+//	for (p = a, i = 0; i < 10; i++)
+//	{
+//		printf("%d ", *p);
+//		p++;
+//	}
+//	printf("\n");
+//	return 0;
+//}
+//void sort(int x[], int n)
+//{
+//	int i, j, k, t;
+//	for (i = 0; i < n - 1; i++)
+//	{
+//		k = i;
+//		for (j = i + 1; j < n; j++)
+//			if (x[j] > x[k])k = j;
+//		if (k != i)
+//		{
+//			t = x[i];
+//			x[i] = x[k];
+//			x[k] = t;
+//		}
+//	}
+//}
