@@ -453,3 +453,177 @@
 //		}
 //	}
 //}
+//通过指针引用字符串。
+//int main()
+//{
+//	int a;
+//	char words[] = "I love China!";
+//	a = words[7];
+//	printf("%s %c\n", words,*(words+7));
+//	return 0;
+//}
+//通过字符指针变量输出一个字符串。
+//int main()
+//{
+//	char words[14] = "I love China!";//按流程来是这么表达的，但是对于字符串引用指针变量这一概念内容在
+//										//细节表达地方可能会略有不同，但本质是不变的（地址,指针）
+//	char* string;
+//	string = &words;
+//	printf("%s", string);
+//	return 0;
+//}
+//int main()
+//{
+//	char* string = "I love China!";
+//	printf("%s", string);
+//	return 0;
+//}
+//将字符串a复制到b中，然后输出，用地址法算出个元素的值。
+//int main()
+//{
+//	char a[] = "I love China!", b[20];
+//	int i;
+//	//for (i = 0; *(a + i) != '\0'; i++)//注:这里a[i]<==>*(a+i)的形式，这是用地址法的关键。
+//	for (i = 0; a[i] != '\0'; i++)
+//		//*(b + i) = *(a + i);
+//		b[i] = a[i];
+//	//*(b + i) = '\0';
+//	printf("string a is:%s\n", a);
+//	printf("string b is:");
+//	*(b + i) = '\0';//这一句是赋值字符串的终止语句，如果没有该语句，后面会随机开辟地址生成乱码。
+//						//只要该句放在循环赋值的前面就没问题。
+//	for (i = 0; b[i] != '\0'; i++)
+//		printf("%c", b[i]);
+//	return 0;
+//}//输出前是字符串，但是在复制输出的过程中，是以字符输出的，但也可以用字符串的方式输出，如下：
+//int main()
+//{
+//	char a[] = "I am a student!", b[20];
+//	int i;
+//	for (i = 0; *(a + i) != '\0'; i++)
+//		*(b + i) = *(a + i);
+//	*(b + i) = '\0';
+//	printf("string a is:%s\n",a);
+//	printf("\n");
+//	printf("string a is:%s\n",b);
+//	return 0;
+//}//也可以用以下表达。
+//用指针变量来处理字符串复制问题。
+//int main()
+//{
+//	char a[] = "I am a boy", b[20], * p1, * p2;
+//	p1 = a; p2 = b;
+//	for (; *p1 != '\0'; p1++, p2++)
+//		*p2 = *p1;
+//	*p2 = '\0';
+//	printf("%s\n", a);
+//	printf("%s", b);
+//	return 0;
+//}
+//用另一种for循环来表达
+//int main()
+//{
+//	char a[] = "I love you", b[20], * p1, * p2;
+//	p1 = a, p2 = b;
+//	for (; *p1 != '\0'; p1++)
+//	{
+//		*p2 = *p1;
+//		p2++;
+//	}
+//	*p2 = '\0';
+//	printf("%s", a);
+//	printf("\n");
+//	printf("%s", b);
+//	return 0;
+//}
+//字符指针做函数的参数。
+//用字符数组名作为函数的参数
+//int main()
+//{
+//	void copy_string(char from[], char to[]);
+//	char a[] = "I am a teacher.";
+//	char b[] = "You are a student.";
+//	printf("string a=%s\nstring b=%s\n", a, b);
+//	printf("\ncopy string a to string b:\n");
+//	copy_string(a, b);
+//	printf("string a=%s\nstring b=%s\n", a, b);
+//	return 0;
+//}
+//void copy_string(char from[], char to[])
+//{
+//	int i = 0;
+//	while (from[i] != '\0')
+//	{
+//		to[i] = from[i];
+//		i++;
+//	}
+//	to[i] = '\0';
+//}
+//用字符型指针变量作参数。
+//int main()
+//{
+//	void copy_str(char* p1, char* p2);
+//	char a[] = "I love you";
+//	char b[] = "You love me";
+//	printf("%s\n%s", a, b);
+//	char* p1, * p2;
+//	p1 = a, p2 = b;
+//	copy_str(p1,p2);
+//	printf("\n");
+//	printf("%s\n%s", p1, p2);
+//	return 0;
+//}
+//void copy_str(char* p1, char* p2)
+//{
+//	int i = 0;//这里设置i作为变量有一个好处
+//				//一方面可以作为两个字符元素的未知变量，另一方面可以为第二个变量累加。
+//	while (p1[i] != '\0')
+//	{
+//		p2[i] = p1[i];
+//		i++;
+//		p2[i] = '\0';
+//	}
+//}
+//用字符型指针变量作形参和实参
+// 1.0
+//int main()
+//{
+//	void copy_str(char* p1, char* p2);
+//	char *a = "I love you";
+//	char b[] = "You love me";
+//	printf("%s\n%s", a, b);
+//	char* p2 = b;
+//	printf("\n");
+//	copy_str(a, p2);
+//	printf("%s\n%s", a, b);
+//	return 0;
+//}
+//void copy_str(char* p1, char* p2)
+//{
+//	for (; *p1 != '\0'; p1++, p2++)
+//	{
+//		*p2 = *p1;
+//	}
+//	*p2 = '\0';
+//}
+//2.0
+//int main()
+//{
+//	void copy_str(char* p1, char* p2);
+//	char a[] = "I love you";
+//	char b[] = "You love me";
+//	printf("%s\n%s", a, b);
+//	char* p1 = a, * p2 = b;
+//	printf("\n");
+//	copy_str(p1, p2);
+//	printf("%s\n%s", a, b);
+//	return 0;
+//}
+//void copy_str(char* p1, char* p2)
+//{
+//	for (; *p1 != '\0'; p1++, p2++)
+//	{
+//		*p2 = *p1;
+//	}
+//	*p2 = '\0';
+//}
