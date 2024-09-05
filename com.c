@@ -621,9 +621,202 @@
 //}
 //void copy_str(char* p1, char* p2)
 //{
-//	for (; *p1 != '\0'; p1++, p2++)
-//	{
-//		*p2 = *p1;
-//	}
-//	*p2 = '\0';
+	/*for (; *p1 != '\0'; p1++, p2++)
+	{
+		*p2 = *p1;
+	}
+	*p2 = '\0';*/
+	//对循环体进优化1.0
+	/*while ((*p2 = *p1) != '\0')
+	{
+		*p1++, p2++;
+	}*/
+	//对循环体进行优化2.0
+	/*while ((*p2++ = *p1++) != '\0');*/
+	//对循环体进行优化3.0
+	/*while (*p2 != '\0')
+	{
+		*p2++ = *p1++;
+	}*/
+	//对循环体进行优化4.0
+	// （ASCII码）逻辑判断转化
+	//while (*p1)//最终推理为真
+	//{
+	//	*p2++ = *p1++;
+	//}
+	//对循环体进行优化5.0
+	//while (*p2++ = *p1++);//循环条件表达式，最终判断为是否为真或者假。//为真的话循环条件语句可以省略，上面5.0即是.
+	//对循环体进行优化6.0(除了用while语句外还可以用for语句)
+	//for (; (*p2++ = *p1++) != 0;);//for语句循环判断条件似乎不能用'/0'作为判断
+	//对循环体进行优化7.0
+	//for (; *p2++ = *p1++;);
+	//对循环体进行优化7.0
 //}
+//int main()
+//{
+//	char* a = "I love China!";
+//	printf("%s", a + 7);//以string类型，即字符串形式输出为：China.
+//	printf("\n");
+//	printf("%c", *(a + 7));//(指针变量法)以char类型，即字符形式输出为：C.
+//	printf("\n");//可以单用下标
+//	printf("%c", a[7]);//(也可以定义指针变量加下标)
+//	return 0;
+//}
+//用指针变量指向一个格式字符串，可以用它来代替printf函数中的格式字符串
+//它相当于printf("a=%d,b=%f\n",a,b);
+//因此只要改变指针变量format所指向的字符串，就可以改变输入输出的格式。
+//这种printf函数称为可改变格式输出函数。
+//int main()
+//{
+//	int a = 3;
+//	float b = 3;
+//	char* format;
+//	format = "a=%d,b=%f\n";
+//	printf(format, a, b);
+//	return 0;
+//}
+//也可以写为：
+//int main()
+//{
+//	//char* format = "%d,%f";
+//	int a = 1;
+//	float b = 1;
+//	//printf(format, a, b);
+////或者还可以另一种方式书写
+//	char format[] = "%d,%f";
+//	printf(format, a, b);
+//	return 0;
+//}
+//指向函数的指针变量
+
+//int main()
+//{
+//	int max(int x, int y);
+//	int min(int x, int y);
+//	static int (*p)(int, int);
+//	int a, b, c, n;
+//	printf("please enter a and b:");
+//	scanf("%d,%d", &a, &b);
+//	printf("please choose 1 or 2:");
+//	scanf("%d", &n);
+//	if (n == 1)
+//	{
+//		p = max;
+//	}
+//	else if (n == 2)
+//	{
+//		p = min;
+//	}
+//	printf("a=%d,b=%d\n", a, b);
+//	c = (*p)(a, b);
+//	if (n == 1)
+//	{
+//		printf("max=%d", c);
+//	}
+//	else {
+//		printf("min=%d", c);
+//	}
+//	return 0;
+//}
+//int max(int x, int y)
+//{
+//	int z;
+//	return(x > y ? x : y);
+//}
+//int min(int x, int y)
+//{
+//	int z;
+//	return(x < y ? x : y);
+//}
+//int (*p)(int, int);
+//int main()
+//{
+//	int max(int , int );
+//	int min(int x, int y);
+//	int a, b, c, n;
+//	printf("please enter a and b:");
+//	scanf("%d ,%d", &a, &b);
+//	printf("please choose 1 or 2:");
+//	scanf("%d", &n);
+//	if (n == 1)p = max;
+//	else if (n == 2)p = min;
+//	c = (*p)(a, b);
+//	printf("a=%d,b=%d\n", a, b);
+//	if (n == 1)printf("max=%d\n", c);
+//	else printf("min=%d\n", c);
+//	return 0;
+//}
+//int max(int x, int y)
+//{
+//	int z;
+//	if (x > y)z = x;
+//	else z = y;
+//	return z;
+//}
+//int min(int x, int y)
+//{
+//	int z;
+//	if (x < y)z = x;
+//	else z = y;
+//	return z;
+//}
+//int main()
+//{	
+//	int max(int x, int y);
+//	int (*p)(int, int);
+//	int a, b, c;
+//	p = max;
+//	printf("输入a，b:");
+//	scanf("%d%d", &a, &b);
+//	c = (*p)(a, b);
+//	printf("%d", c);
+//	return 0;
+//}
+//int max(int x, int y)
+//{
+//	int z;
+//	if (x > y)z = x;
+//	else z = y;
+//	return z;
+//}
+//用指向函数的指针作函数参数
+//int main()
+//{
+//	int fun(int x, int y, int(*p)(int, int));
+//	int max(int x, int y);
+//	int min(int x, int y);
+//	int sum(int x, int y);
+//	int a = 34, b = -21, n;
+//	printf("please choose 1,2 or 3:");
+//	scanf("%d", &n);
+//	if (n == 1)fun(a, b, max);//4.0最后再返回到主调函数中fun去,此时fun的值为最终值。
+//	else if (n == 2)fun(a, b, min);//这种定义似乎可以省去再次定义变量的麻烦来存放主调函数的值。
+//	else if (n == 3)fun(a, b, sum);
+//	return 0;
+//}
+//int fun(int x, int y, int(*p)(int, int))//1.0程序走到这里暂时不执行通用指针函数，仅仅是把a,b的值输入下去。
+//{//通用指针函数就是指下面这三个自定义函数，只不过没有具体指定要取谁作为输出结果。
+//	int result;
+//	result = (*p)(x, y);//3.0比较后的值返回到这里
+//	printf("%d\n", result);
+//}
+//int max(int x, int y)//2.0然后跳到这里进行数值比较
+//{
+//	int z;
+//	printf("max=");
+//	return(x > y ? x : y);
+//}
+//int min(int x, int y)
+//{
+//	int z;
+//	printf("min=");
+//	return(x < y ? x : y);
+//}
+//int sum(int x, int y)
+//{
+//	int z;
+//	z = x + y;
+//	printf("sum=");
+//	return(z);
+//}
+
