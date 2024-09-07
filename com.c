@@ -819,4 +819,94 @@
 //	printf("sum=");
 //	return(z);
 //}
+//返回指针类型的函数
+//int main()
+//{
+//	float score[][4] = { {60,70,80,90},{56,89,67,88},{34,78,90,66} };
+//	float* search(float* pointer[4], int n);
+//	float* p;
+//	int i, k;
+//	printf("enter the number of student:");
+//	scanf("%d", &k);
+//	printf("The scores of No.%d are:\n",k);
+//	p = search(score, k);
+//	for (i = 0; i < 4; i++)
+//		printf("%f\t", *(p + i));
+//	return 0;
+//}
+//float* search(float(* pointer)[4], int n)
+//{
+//	float* pt;
+//	pt = *(pointer + n);
+//	return pt;
+//}
+//练习一
+//int main()
+//{
+//	float* find(float* (point)[4], int n);
+//	float score[][4] = { {24,23,25,26},{34,35,36,37},{40,41,42,43} };
+//	float* p;
+//	int i, k;
+//	printf("输入学号:");
+//	scanf("%d", &k);
+//	printf("%d", k);
+//	p = find(score, k);
+//	for (i = 0; i < 4; i++)
+//		printf("%f", *(p + i));
+//	return 0;
+//}
+//float* find(float(*point)[4], int n) 
+//{
+//	float* pt;
+//	pt = *(point + n);
+//	return pt;
+//}
+//指向多维数组元素的指针变量
+//指向数组元素的指针变量
+//int main()
+//{
+//	int a[3][4] = { {1,2,3,4},{5,6,7,8},{9,1,5,2} };
+//	int* p;
+//	for (p = a[0]; p < a[0] + 12; p++)
+//	{
+//		if ((p - a[0]) % 4 == 0)
+//		{
+//			printf("\n");
+//		}
+//		printf("%d ", *p);
+//	}
+//	
+//	return 0;
+//}
+//int main()
+//{
+//	int a[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
+//	int* p;
+//	for (p = a[0][0]; p < a[0][0] + 2; p++)
+//		printf("%d", a[2][2]);
+//	return 0;
+//}
+//int main()
+//{
+//	int a[][3] = { {9,8,7},{6,5,4},{3,2,1} };
+//	int(*p)[3], i, j;//指针变量p三个整型元素的一维数组
+//	p = a;//p指向二维数组的0行
+//	printf("输入两个数:");
+//	scanf("%d,%d", &i, &j);
+//	printf("%d\n", *(*(p + i) + j));
+//	printf("%d", a[i][j]);
+//	return 0;
+//}
+//int main()
+//{
+//	int a[4] = { 1,3,5,7 };
+//	int(*p)[4];
+//	p = &a;
+//	printf("%d", (*p)[3]);//注意其不能写为"p=a;",因为这样写表示p的值是&a[0],指向首元素a[0].(首元素地址相同，但他们的基类型不同)
+//	printf("\n");//"p=&a;"表示p指向一维数组的行(指向行的意义才表达正确)，(*p)[3]是p所指向的（行）号中序号为3的元素。
+//	printf("%d", *(a+3));
+//	printf("\n");
+//	printf("%d", a[3]);
+//	return 0;
+//}
 
