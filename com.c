@@ -909,4 +909,76 @@
 //	printf("%d", a[3]);
 //	return 0;
 //}
-
+//平均值有点问题。
+//int main()
+//{
+//	void average(float* p, int n);
+//	void search(float(*p)[4], int n);
+//	float score[3][4] = { {65,67,70,60},{80,87,90,81},{90,99,100,98} };
+//	average(*score, 12);
+//	search(score, 2);
+//	return 0;
+//}
+//void average(float* p, int n)
+//{
+//	float* pt;
+//	float sum = 0, aver;
+//	pt = p + n - 1;
+//	for (; p < pt; p++)
+//	{
+//		sum = sum + (*p);
+//	}
+//	aver = sum / n;
+//	printf("aver=%5.2f\n", aver);
+//}
+//void search(float(*p)[4], int n)
+//{
+//	int i;
+//	for (i = 0; i < 4; i++)
+//	{
+//		printf("%5.2f\n", *(*(p + n) + i));
+//	}
+//}
+//int main()
+//{
+//	void search(float(*p)[4], int n);
+//	float score[3][4]= { {65,67,70,60},{58,87,90,81},{90,99,100,98} };
+//	search(score, 3);
+//	return 0;
+//}
+//void search(float(*p)[4], int n)
+//{
+//	int i, j, flag;
+//	for (j = 0; j < n; j++)
+//	{
+//		flag = 0;
+//		for (i = 0; i < 4; i++)
+//			if (*(*(p + j) + i) < 60)flag = 1;
+//		if (flag == 1)
+//		{
+//			printf("%d\n", j);
+//			for (i = 0; i < 4; i++)
+//				printf("%5.1f", *(*(p + j) + i));
+//		}
+//	}
+//}
+//int main()
+//{
+//	float* search(float(*pt)[4], int n);
+//	float score[][4] = { {75,85,94,64},{56,68,79,62},{88,67,93,81} };
+//	float* p;
+//	int i, k;
+//	printf("输入数字:");
+//	scanf("%d", &k);
+//	//printf("%d", k);
+//	p = search(score, k);
+//	for (i = 0; i < 4; i++)
+//		printf("%5.2f\t", *(p + i));
+//	return 0;
+//}
+//float* search(float(*pt)[4], int n)
+//{
+//	float* m;
+//	m = *(pt + n);
+//	return m;
+//}
