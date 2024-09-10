@@ -982,3 +982,105 @@
 //	m = *(pt + n);
 //	return m;
 //}
+//int main()
+//{
+//	float* search(float(*point)[4]);
+//	float score[][4] = { {74,85,59,71},{78,55,93,88},{80,77,66,87} };
+//	int i, j;
+//	float* p;
+//	for (i = 0; i < 3; i++)
+//	{
+//		p = search(score + i);
+//		if (p == *(score + i))
+//		{
+//			printf("No.%d score:", i);
+//			for (j = 0; j < 4; j++)
+//				printf("%5.2f ", *(p + j));
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
+//float *search(float(*point)[4])
+//{
+//	int i = 0;
+//	float* pt;
+//	pt = NULL;
+//	for (; i < 4; i++)
+//	{
+//		if (*(*point + i) < 60)
+//			pt = *point;
+//	}
+//	return pt;
+//}
+//返回指针值的函数
+//int main()
+//{
+//	float* search(float(*pointer)[4]);
+//	float score[][4]= { {74,85,59,71},{78,55,93,88},{80,77,66,87} };
+//	int i, j;
+//	float* p;
+//	for (i = 0; i < 3; i++)
+//	{
+//		p = search(score + i);
+//		if (p == *(score + i))
+//		{
+//			printf("No.%d score:", i);
+//			for (j = 0; j < 4; j++)
+//			{
+//				printf("%5.2f ", *(p + j));
+//			}
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
+//float *search(float(*pointer)[4])
+//{
+//	int i = 0;
+//	float* pt;
+//	pt = NULL;
+//	for (; i < 4; i++)
+//	{
+//		if (*(*pointer + i) < 60)
+//		{
+//			pt = *pointer;
+//		}
+//	}
+//	return pt;
+//}
+//再练习一次
+//现在一赋分制进行运算，满分30分，低于15分，则需要进一步加强学习。
+//int main()
+//{
+//	int *search(int(*pointer)[3]);
+//	int score[][3] = { {12,16,18},{21,25,19},{17,22,14} };
+//	int* p, i, j;
+//	for (i = 0; i < 3; i++)//定义的是是3行3列的二维数组，所以要进行循环三次行依次查找，然后逐个打印。
+//	{
+//		p = search(score + i);//然后返回给主函数，进行该行数据的打印。
+//		if (p == *(score + i))//return后进行地址匹配，匹配成功后依次循环打印输出。
+//		{
+//			printf("No.%d score:", i);
+//			for (j = 0; j < 3; j++)
+//			
+//				printf("%d ", *(p + j));
+//			
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//int *search(int(*pointer)[3])//注意这里的函数定义为指针型函数，因为它的返回值是指针值，要取其低分的地址
+//							
+//{
+//	int i=0,*pt;
+//	pt = NULL;//如若满足条件返回空值，不满足的话进行下面的条件查找，若小于该条件的话，将该值的地址进行return即可。
+//	for (; i < 3; i++)
+//	{
+//		if (*(*pointer + i) < 15)
+//		
+//			pt = *pointer;
+//	}
+//	return pt;
+//}
