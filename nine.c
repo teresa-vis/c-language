@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 //int main()
 //{
 //	void sort(int arry[], int n);
@@ -197,5 +198,154 @@
 //	}
 //	return 0;
 //}
-
-
+//int main()
+//{
+//	int* p1, i;
+//	p1 = (int*)malloc(5 * sizeof(int));//开辟动态内存区，将地址转换成int*型，然后放在p1中。
+//									//malloc参数可以只写5，后面是为了使之更准确而补充的。
+//	for (i = 0; i < 5; i++)
+//	{
+//		scanf("%d", p1 + i);
+//	}
+//	check(p1);
+//	return 0;
+//}
+//int check(int* p)
+//{
+//	int i;
+//	printf("They are fail:");
+//	for (i = 0; i < 5; i++)
+//	{
+//		if (p[i] < 60)printf("%d ", p[i]);
+//	}
+//}
+//int main()
+//{
+//	struct Student
+//	{
+//		long int num;
+//		char name[20];
+//		char sex;
+//		char addr[20];
+//	}a = { 101010,"Li Ming",'M',"123 Beijing Road" };
+//	printf("%d %s %c %s", a.num, a.name, a.sex, a.addr);
+//	struct Student pass1= { "Li Ming",'M',"123 Beijing Road" };
+//	printf("\n");
+//	printf("%s", pass1);//引用结构体变量实质是引用所用的地址值。
+//	return 0;
+//}
+//int main()
+//{
+//	struct Passage
+//	{
+//		long int num;
+//		char name[20];
+//		char sex;
+//		char addr[20];
+//	}a = { 101010,"Li Ming",'M',"123 Beijing Road" };
+//	//struct Passage b = { .sex = 'm',.name = "kjhfgkj" };
+//	//struct Passage b = { .name = "kjhfgkj"};
+//	//printf("%c%s", b.sex,b.name);
+//	//printf("%d %s %c %s", b.num, b.name, b.sex, b.addr);
+//	//printf(" %d ", a.num);
+//	//printf(" %d", number1.num=10101);
+//	a.sex = 'm';
+//	printf("%c", a.sex);
+//	return 0;
+//}
+//结构体变量的初始化和引用
+//int main()
+//{
+//	struct Student
+//	{
+//		int num;
+//		char name[20];
+//		float score;
+//	}student1,student2;
+//	scanf("%d%s%f", &student1.num, &student1.name, &student1.score);
+//	scanf("%d%s%f", &student2.num, &student2.name, &student2.score);
+//	printf("The higher score is:\n");
+//	if (student1.score > student2.score)
+//		printf("%d%s%6.2f", student1.num, student1.name, student1.score);
+//	else if (student1.score < student2.score)
+//		printf("%d%s%6.2f", student2.num, student2.name, student2.score);
+//	else
+//	{
+//		printf("%d%s%6.2f", student1.num, student1.name, student1.score);
+//		printf("%d%s%6.2f", student2.num, student2.name, student2.score);
+//	}
+//	return 0;
+//}
+//struct Person
+//{
+//	char name[20];
+//	int score;
+//}leader[3] = { "L",0,"Z",0,"S",0 };
+//int main()
+//{
+//	int i, j;
+//	char ldme[20];
+//	for (i = 1; i <= 10; i++)
+//	{
+//		scanf("%s", ldme);
+//		for (j = 0; j < 3; j++)
+//			if (strcmp(ldme, leader[j].name) == 0)//请注意，if这是一条语句。
+//			{
+//				leader[j].score++;
+//			}
+//	}
+//	printf("\nResult\n");
+//	for (i = 0; i < 3; i++)
+//	{
+//		printf("%5s:%d\n", leader[i].name, leader[i].score);
+//	}
+//	return 0;
+//}
+//struct Person
+//{
+//	char name[20];
+//	int count;
+//}leader[3] = { "li",0,"zhang",0,"sun",0 };
+//int main()
+//{
+//	int i, j;
+//	char lrne[20];
+//	for (i = 1; i <= 10; i++)
+//	{
+//		scanf("%s", lrne);
+//		for (j = 0; j < 3; j++)
+//			if (strcmp(lrne, leader[j].name) == 0)leader[j].count++;
+//	}
+//	printf("\nResult\n");
+//	for (i = 0; i < 3; i++)
+//		printf("%5s%d\n", leader[i].name, leader[i].count);
+//	return 0;
+//}
+//使用结构体数组。
+//struct Student
+//{
+//	int num;
+//	float score;
+//	char name[20];
+//};
+//int main()
+//{
+//	struct Student stu[5] = { 1,13,"q",2,14,"w",3,15,"e",4,16,"r",5,17,"t" };
+//	struct Student temp;
+//	const int n = 30;
+//	 int i, j, k;
+//	printf("The order is:\n");
+//	for (i = 0; i < n - 1; i++)
+//	{
+//		k = i;
+//		for (j = i + 1; j < n; j++)
+//			if (stu[j].score > stu[k].score)
+//				k = j;
+//		temp = stu[k];
+//		stu[k] = stu[i];
+//		stu[i] = temp;//这里可以整体对换，但是不可以整体打印(使用结构体【类型】数组的好处)。
+//	}
+//	for (i = 0; i < n; i++)
+//		printf("%6d%6.2f%8s\n", stu[i].num, stu[i].score, stu[i].name);
+//	return 0;
+//}
