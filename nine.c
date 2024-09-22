@@ -349,3 +349,122 @@
 //		printf("%6d%6.2f%8s\n", stu[i].num, stu[i].score, stu[i].name);
 //	return 0;
 //}
+//int main()
+//{
+//	struct Student
+//	{
+//		long num;
+//		char name[20];
+//		char sex;
+//		float score;
+//	};
+//	struct Student stu_1;
+//	struct Student* p;
+//	p = &stu_1;
+//	stu_1.num = 10101;
+//	strcpy(stu_1.name, "Lilin");
+//	stu_1.sex = 'm';
+//	stu_1.score = 89.5;
+//	printf("%d\n%s\n%c\n%0.2f\n", stu_1.num, stu_1.name, stu_1.sex, stu_1.score);
+//	printf("\n");
+//	printf("%d\n%s\n%c\n%f\n", (*p).num, (*p).name, (*p).sex, (*p).score);//通过指向结构体的指针变量来输出结构体成员。
+//	printf("\n");
+//	printf("%d\n%s\n%c\n%f", p->num, p->name, p->sex, p->score);
+//	return 0;
+//}
+//指向结构体数组的指针
+//struct Student
+//{
+//	int num;
+//	char name[20];
+//	char sex;
+//	int age;
+//};
+//struct Student stu[3] = { 1,"lili",'m',7,2,"pipi",'f',8,3,"nini",'m',9 };
+//int main()
+//{
+//	struct Student* p;
+//	printf("putout all msg:\n");
+//	for (p = stu; p < stu + 3; p++)
+//		printf("%2d%4s%6c%6d", p->num, p->name, p->sex, p->age);
+//	printf("\n");
+//	p = (struct Student*)stu[0].name;//强制类型转换，将成员的地址转换成p的类型。
+//	printf("%s\n", p);
+//	printf("%s\n", p + 1);
+//	printf("%s\n", p + 2);
+//	printf("%s%s", stu[0].name, stu[1].name);//p是指向结构体类型对象的指针变量，它是用来指向一个结构体类型对象的
+//	//不应该用来指向stu数组元素中的某一成员，如上边的举例。
+//	return 0;
+//}
+//#define n 3
+//struct Student
+//{
+//	int num;
+//	char name[20];
+//	float score[3];
+//	float aver;
+//};
+//int main()
+//{
+//	void input(struct Student stu[]);
+//	static struct Student top(struct Student stu[]);//注意自定义函数名称的定义(或者是函数入口的定义)，切勿与库函数名称重合。
+//	void print(struct Student stud);
+//	struct Student stu[n], * p = stu;
+//	input(p);
+//	print(top(p));
+//	return 0;
+//}
+//void input(struct Student stu[])
+//{
+//	int i;
+//	printf("请输入各学生的信息:学号,姓名,3门课的成绩:\n");
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d%s%f%f%f", &stu[i].num, stu[i].name, &stu[i].score[0], &stu[i].score[1], &stu[i].score[2]);
+//		stu[i].aver = (stu[i].score[0] + stu[i].score[1] + stu[i].score[2]) / 3;
+//	}
+//}
+//struct Student top(struct Student stu[])
+//{
+//	int i, m = 0;//此m是假想的成绩最高学生的成绩(最高成绩是实际存在的)在已知的可预控的未知情况下，这样是非常完美的解决语句。
+//	for (i = 0; i < n; i++)
+//	{
+//		if (stu[i].aver > stu[m].aver)
+//		{
+//			m = i;
+//		}
+//	}
+//		return stu[m];
+//}
+//void print(struct Student stud)
+//{
+//	struct Student top(struct Student stu[]);//此语句可加快执行速度。
+//	printf("\n最高学生的成绩是:\n");
+//	printf("学号:%d\n姓名:%s\n三门课的成绩%0.2f %0.2f %0.2f\n平均成绩:%0.2f",
+//		stud.num, stud.name, stud.score[0], stud.score[1], stud.score[2], stud.aver);
+//}
+//建立简单的静态链表
+//struct Student
+//{
+//	int num;
+//	float score;
+//	struct Student* next;
+//};
+//int main()
+//{
+//	struct Student a, b, c, * p, * head;
+//	a.num = 10101; a.score = 89.5;
+//	b.num = 10103; b.score = 90;
+//	c.num = 10107; c.score = 85;
+//	head = &a;
+//	a.next = &b;
+//	b.next = &c;
+//	c.next = NULL;
+//	p = head;
+//	do
+//	{
+//		printf("%d %0.2f\n", p->num, p->score);
+//		p = p->next;
+//	} while (p != NULL);
+//	return 0;
+//}
